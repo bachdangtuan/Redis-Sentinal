@@ -6,11 +6,10 @@ services:
     ports:
       - '6379:6379'
     command: > 
-      bash -c "mkdir -p /var/log/redis && 
-      touch /var/log/redis/redis.log && 
-      redis-server --port 6379 --slaveof 10.0.0.243 6379  --logfile /var/log/redis/redis.log"
+      bash -c "mkdir -p /data/log/redis && 
+      touch /data/log/redis/redis.log && 
+      redis-server --port 6379 --slaveof 10.0.0.243 6379  --logfile /data/log/redis/redis.log"
 
     volumes:
       - ./data:/data
-      - ./log-redis:/var/log/redis/redis.log
       - ./config/redis-slaves.conf:/usr/local/etc/redis/redis.conf
