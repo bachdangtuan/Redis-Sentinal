@@ -12,4 +12,5 @@ services:
 
     volumes:
       - ./data:/data
+      - ./log-redis:/var/log/redis/*
       - ./config/redis-slaves.conf:/usr/local/etc/redis/redis.conf
