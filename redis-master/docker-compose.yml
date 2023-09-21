@@ -8,4 +8,7 @@ services:
       - ./config/redis-master.conf:/usr/local/etc/redis/redis.conf
     ports:
       - '6379:6379'
-    command: redis-server
+    command: > 
+      bash -c "mkdir -p /data/log/redis && 
+      touch /data/log/redis/redis.log && 
+      redis-server --port 6379 --logfile /data/log/redis/redis.log"
