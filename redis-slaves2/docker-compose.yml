@@ -8,6 +8,5 @@ services:
     command: redis-server --port 6379 --slaveof 10.0.0.243 6379
 
     volumes:
-      - ./log/redis-server.log:/var/log/redis/redis-server.log
       - ./data:/data
       - ./config/redis-slaves.conf:/usr/local/etc/redis/redis.conf
