@@ -10,4 +10,5 @@ services:
        touch /data/log/redis.log && 
        redis-sentinel /usr/local/etc/redis/sentinel.conf --logfile /data/log/redis.log"
     volumes:
+      - ./data:/data
       - ./config/redis-sentinel.conf:/usr/local/etc/redis/sentinel.conf
