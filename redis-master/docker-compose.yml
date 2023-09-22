@@ -12,3 +12,14 @@ services:
       bash -c "mkdir -p /data/log/redis && 
       touch /data/log/redis/redis.log && 
       redis-server --port 6379 --logfile /data/log/redis/redis.log"
+
+  redis-master-sentinel:
+    image: redis:latest
+    container_name: redis_master_sentinel
+    ports:
+      - "5000:5000"
+    command: redis-server /usr/local/etc/redis/sentinel.conf --sentinel
+    volumes:
+      - ./redis-master-sentinel/redis-master-sentinel.conf:/usr/local/etc/redis/sentinel.conf
+    depends_on: 
+      - redis-master
