@@ -16,7 +16,7 @@ services:
 
   redis-slave1-sentinel:
     image: redis:latest
-    container_name: redis_slave1_sentinel
+    container_name: redis-slave1-sentinel
     ports:
       - "5000:5000"
     command: redis-sentinel /usr/local/etc/redis/sentinel.conf
