@@ -1,0 +1,13 @@
+version: '3'
+services:
+  redis-sentinel:
+    image: redis:latest
+    container_name: redis-sentinel
+    ports:
+      - "5000:5000"
+    command: >
+       bash -c "mkdir -p /data/log && 
+       touch /data/log/redis.log && 
+       redis-sentinel /usr/local/etc/redis/sentinel.conf --logfile /data/log/redis.log"
+    volumes:
+      - ./redis-slave2-sentinel/sentinel-slave2.conf:/usr/local/etc/redis/sentinel.conf
