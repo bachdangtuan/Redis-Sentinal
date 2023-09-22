@@ -18,6 +18,7 @@ services:
     container_name: redis_master_sentinel
     ports:
       - "5000:5000"
+    command: redis-sentinel /usr/local/etc/redis/sentinel.conf
     volumes:
       - ./redis-master-sentinel/redis-master-sentinel.conf:/usr/local/etc/redis/sentinel.conf
     depends_on: 
