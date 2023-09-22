@@ -12,4 +12,5 @@ services:
       # - ./logfile/logs:/var/log/haproxy:rw
     ports:
       - 8080:8080
-      - 443:443
+      - 2100:2100
+      - 2101:2101
