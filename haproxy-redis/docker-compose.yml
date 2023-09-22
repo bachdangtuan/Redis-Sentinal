@@ -11,6 +11,6 @@ services:
       # - ./cert:/usr/local/etc/haproxy/certs/
       # - ./logfile/logs:/var/log/haproxy:rw
     ports:
-      - 8080:8080
+      - 9000:9000
       - 2100:2100
       - 2101:2101
