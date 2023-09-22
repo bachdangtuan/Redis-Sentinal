@@ -11,5 +11,5 @@ services:
       # - ./cert:/usr/local/etc/haproxy/certs/
       # - ./logfile/logs:/var/log/haproxy:rw
     ports:
-      - 80:80
+      - 8080:8080
       - 443:443
